@@ -51,12 +51,7 @@ const App = () => {
 		e: ChangeEvent<HTMLInputElement | undefined>
 	) => {
 		e.preventDefault();
-
 		setText(e.target.value || '');
-	};
-
-	const typeWrite = () => {
-		startTyping(text);
 	};
 
 	return (
@@ -68,7 +63,12 @@ const App = () => {
 				placeholder="Type a sentence"
 				style={{ width: '300px', height: '40px' }}
 			/>
-			<button onClick={typeWrite} type="submit">
+			<button
+				onClick={() => {
+					startTyping(text);
+				}}
+				type="submit"
+			>
 				Display with typewriter effect
 			</button>
 
